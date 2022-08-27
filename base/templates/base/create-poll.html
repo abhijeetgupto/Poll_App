@@ -1,0 +1,13 @@
+<h1>Create Poll</h1>
+<a href="{% url 'list-polls' %}">Go Back</a>
+
+<p>No. of polls you've made : <b>{{ num }}</b></p>
+{% if can_create %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Create Poll">
+    </form>
+{% else %}
+    <h3>You've already create 5 polls!</h3>
+{% endif %}

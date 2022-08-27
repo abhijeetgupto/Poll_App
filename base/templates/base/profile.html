@@ -1,0 +1,7 @@
+<h1>Hey {{user}}</h1>
+<p>You can logout from <a href="{% url 'logout' %}">here</a></p>
+<h3>These are questoins posted by you:</h3>
+{% for question in questions %}
+    <p>{{ question }}<a href="{% url 'poll-result' question.id %}">Show Results</a></p>
+    
+{% endfor %}

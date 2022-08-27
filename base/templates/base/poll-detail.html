@@ -1,0 +1,24 @@
+<h1>Detail View</h1>
+<a href="{% url 'list-polls' %}">Go Back</a>
+
+<form action="" method="Post">
+    {% csrf_token %}
+    <h3>{{ object }}</h3>
+
+            <input type="radio" value="1" name="answer">
+            <label for="1">{{ object.option1 }}</label><br>
+
+            <input type="radio" value="2" name="answer">
+            <label for="2">{{ object.option2 }}</label><br>
+
+            <input type="radio" value="3" name="answer">
+            <label for="3">{{ object.option3 }}</label><br>
+
+            <input type="radio" value="4" name="answer">
+            <label for="4">{{ object.option4 }}</label><br>
+    
+    
+    <br>
+    <input type="submit" value="Submit" >
+</form>
+

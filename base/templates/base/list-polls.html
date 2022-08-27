@@ -1,0 +1,13 @@
+<h1>Available Polls</h1>
+
+<p>Welcome {{user}}</p>
+<p>You can logout from <a href="{% url 'logout' %}">here</a></p>
+<p><a href="{% url 'user-profile' %}">Profile Page</a></p>
+<p>Create a new poll from <a href="{% url 'create-poll' %}">here</a></p>
+
+<h3>These are the available polls right now!</h3>
+<ol>
+{% for question in questions %}
+    <li><a href="{% url 'poll-detail' question.id %}"> {{ question }} </a></li>
+{% endfor %}
+</ol>
